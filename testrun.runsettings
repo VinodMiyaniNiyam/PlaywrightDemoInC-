@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <!-- Rules for running tests -->
+  <RunConfiguration>
+    <MaxCpuCount>1</MaxCpuCount>
+    
+    <!-- Test category filter:
+         This will run tests marked with [Category("High")] FIRST by effectively filtering for them.
+         To run tests with priority via XML in NUnit/VSTest, you typically define multiple runs targeting specific categories
+         or define TestCaseFilter here.
+         
+         For example, to run ONLY High priority tests:
+         <TestCaseFilter>TestCategory=High</TestCaseFilter>
+    -->
+    <TestCaseFilter>TestCategory=Priority1|TestCategory=Priority2|TestCategory=Priority3|TestCategory=Priority4|TestCategory=Priority6|TestCategory=Priority7|TestCategory=Priority8</TestCaseFilter>
+  </RunConfiguration>
+
+  <!-- NUnit specific settings -->
+  <NUnit>
+    <TestOutputXml>TestResults</TestOutputXml>
+  </NUnit>
+
+  <!-- HTML Reporter Configuration (Priority 9) -->
+  <LoggerRunSettings>
+    <Loggers>
+      <Logger friendlyName="html" enabled="True">
+        <Configuration>
+          <LogFileName>TestReport.html</LogFileName>
+        </Configuration>
+      </Logger>
+    </Loggers>
+  </LoggerRunSettings>
+
+</RunSettings>
