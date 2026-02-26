@@ -4,8 +4,17 @@ using System.Threading.Tasks;
 
 namespace PlaywrightDemoInC.Tests
 {
+    /// <summary>
+    /// Test suite demonstrating advanced asynchronous synchronization handling.
+    /// </summary>
     public class ExplicitWaitTest : BaseTest
     {
+        /// <summary>
+        /// Test Case 7: Clicks a button to trigger a dynamically loaded element with a built-in delay.
+        /// Implements an explicit Playwright WaitForAsync mechanics targeting the visible state 
+        /// to ensure synchronization before validating the text overlay.
+        /// Priority: 7
+        /// </summary>
         [Test, Category("Priority7"), Order(7)]
         public async Task ImplementExplicitWaitForElement()
         {

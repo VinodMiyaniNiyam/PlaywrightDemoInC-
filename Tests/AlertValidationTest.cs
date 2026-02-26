@@ -4,8 +4,17 @@ using System.Threading.Tasks;
 
 namespace PlaywrightDemoInC.Tests
 {
+    /// <summary>
+    /// Test suite responsible for validating native browser JavaScript dialogs.
+    /// Demonstrates Playwright's Page.Dialog event listener capabilities.
+    /// </summary>
     public class AlertValidationTest : BaseTest
     {
+        /// <summary>
+        /// Test Case 4: Triggers a JavaScript Alert on the DOM, intercepts the event, 
+        /// captures its message, validates the message string, and affirmatively dismisses the prompt.
+        /// Priority: 4
+        /// </summary>
         [Test, Category("Priority4"), Order(4)]
         public async Task HandleAndValidateJavaScriptAlert()
         {

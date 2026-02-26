@@ -5,8 +5,16 @@ using System.Threading.Tasks;
 
 namespace PlaywrightDemoInC.Tests
 {
+    /// <summary>
+    /// Test suite for validating the visual presence of critical page elements against the live DOM.
+    /// </summary>
     public class ButtonVisibilityTest : BaseTest
     {
+        /// <summary>
+        /// Test Case 3: Confirms the login button is physically attached to the DOM, 
+        /// visually rendering on the viewport, and logically enabled for interaction.
+        /// Priority: 3
+        /// </summary>
         [Test, Category("Priority3"), Order(3)]
         public async Task ValidateButtonPresenceAndVisibility()
         {

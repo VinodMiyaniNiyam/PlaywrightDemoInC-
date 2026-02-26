@@ -3,8 +3,17 @@ using System.IO;
 
 namespace PlaywrightDemoInC.Tests
 {
+    /// <summary>
+    /// Utility class responsible for generating the default Excel test data sheet.
+    /// Overrides manual configuration to ensure Data-Driven paths are never broken out of the box.
+    /// </summary>
     public static class ExcelDataGenerator
     {
+        /// <summary>
+        /// Programmatically creates TestData.xlsx if it does not already exist on disk.
+        /// Populates the initial headers and base testing data rows.
+        /// </summary>
+        /// <returns>The fully qualified absolute path to the generated Excel configuration file.</returns>
         public static string GenerateTestDataFile()
         {
             var projectDirectory = Directory.GetParent(System.AppContext.BaseDirectory).Parent.Parent.Parent.FullName;

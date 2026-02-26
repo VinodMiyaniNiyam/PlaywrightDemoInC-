@@ -8,8 +8,16 @@ using System.Threading.Tasks;
 
 namespace PlaywrightDemoInC.Tests
 {
+    /// <summary>
+    /// Base class for all Playwright NUnit tests within this framework.
+    /// Extends PageTest to provide built-in reporting, logging, and screenshot generation per test.
+    /// </summary>
     public class BaseTest : PageTest
     {
+        /// <summary>
+        /// Global TearDown method executed immediately after each [Test] method completes.
+        /// Determines pass/fail status, captures the browser UI state, and generates a timestamped execution log.
+        /// </summary>
         [TearDown]
         public async Task TakeScreenshotOnTeardown()
         {

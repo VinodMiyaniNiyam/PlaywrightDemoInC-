@@ -6,8 +6,17 @@ using ExcelDataReader;
 
 namespace PlaywrightDemoInC.Tests
 {
+    /// <summary>
+    /// Helper class providing Data-Driven Testing (DDT) capabilities via .xlsx processing.
+    /// Intercepts NUnit's TestCaseSource to supply variable matrices dynamically.
+    /// </summary>
     public static class ExcelDataHelper
     {
+        /// <summary>
+        /// Reads test case permutations directly from the TestData.xlsx artifact.
+        /// Iterates row records into parameterized NUnit yield returns.
+        /// </summary>
+        /// <returns>An IEnumerable collection driving parameterized [Test] executions.</returns>
         public static IEnumerable<TestCaseData> GetLoginTestData()
         {
             // Register encoding provider for ExcelDataReader over .NET Core

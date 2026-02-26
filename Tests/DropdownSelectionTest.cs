@@ -4,8 +4,16 @@ using System.Threading.Tasks;
 
 namespace PlaywrightDemoInC.Tests
 {
+    /// <summary>
+    /// Test suite verifying the manipulation and validation of HTML Select (Dropdown) inputs.
+    /// </summary>
     public class DropdownSelectionTest : BaseTest
     {
+        /// <summary>
+        /// Test Case 6: Targets a dropdown select element, clicks 'Option 2' by its rendered label, 
+        /// and verifies the DOM assigns the correct backing value '2' to the target locator.
+        /// Priority: 6
+        /// </summary>
         [Test, Category("Priority6"), Order(6)]
         public async Task ValidateDropdownSelection()
         {

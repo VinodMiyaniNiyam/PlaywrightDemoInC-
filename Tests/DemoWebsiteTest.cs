@@ -5,8 +5,16 @@ using System.Threading.Tasks;
 
 namespace PlaywrightDemoInC.Tests
 {
+    /// <summary>
+    /// Test suite validating basic browser navigation and document property assertions.
+    /// </summary>
     public class DemoWebsiteTest : BaseTest
     {
+        /// <summary>
+        /// Test Case 2: Launches the Chromium browser, navigates to the Example Domain, 
+        /// and strictly validates the browser's Document Title attribute.
+        /// Priority: 1
+        /// </summary>
         [Test, Category("Priority1"), Order(1)]
         public async Task VerifyDemoWebsiteTitle()
         {

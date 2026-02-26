@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace PlaywrightDemoInC.Tests
 {
+    /// <summary>
+    /// Test suite for verifying the HTTP integrity of all page navigation elements.
+    /// Utilizes Playwright APIRequestContext to perform parallel backend health checks.
+    /// </summary>
     public class BrokenLinksTest : BaseTest
     {
+        /// <summary>
+        /// Test Case 8: Scrapes all anchor tags present on the page, extracts the Href targets, 
+        /// and asynchronously pings each endpoint verifying 200 OK statuses globally.
+        /// Priority: 8
+        /// </summary>
         [Test, Category("Priority8"), Order(8)]
         public async Task ValidateBrokenLinksOnWebpage()
         {
