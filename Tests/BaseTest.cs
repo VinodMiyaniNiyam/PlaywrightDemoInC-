@@ -33,6 +33,12 @@ namespace PlaywrightDemoInC.Tests
 
                 TestContext.AddTestAttachment(screenshotPath);
                 TestContext.Progress.WriteLine($"Test failed. Screenshot saved at: {screenshotPath}");
+                
+                // Save the text log file
+                var logFilePath = Path.Combine(folderPath, $"{testName}_{timestamp}.txt");
+                var logContent = $"Test Name: {testName}\nStatus: FAILED\nExecution Time: {DateTime.Now}\nMessage: {TestContext.CurrentContext.Result.Message}\nStackTrace: {TestContext.CurrentContext.Result.StackTrace}\n";
+                File.WriteAllText(logFilePath, logContent);
+                TestContext.AddTestAttachment(logFilePath);
             }
             else if (status == TestStatus.Passed)
             {
@@ -49,6 +55,12 @@ namespace PlaywrightDemoInC.Tests
 
                 TestContext.AddTestAttachment(screenshotPath);
                 TestContext.Progress.WriteLine($"Test passed. Screenshot saved at: {screenshotPath}");
+                
+                // Save the text log file
+                var logFilePath = Path.Combine(folderPath, $"{testName}_{timestamp}.txt");
+                var logContent = $"Test Name: {testName}\nStatus: PASSED\nExecution Time: {DateTime.Now}\nMessage: {TestContext.CurrentContext.Result.Message}\n";
+                File.WriteAllText(logFilePath, logContent);
+                TestContext.AddTestAttachment(logFilePath);
             }
         }
     }
